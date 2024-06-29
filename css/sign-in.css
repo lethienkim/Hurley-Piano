@@ -5,6 +5,90 @@ File: music-lessons.css
  Purpose: Music Page Styling
 *****************************************/
 
+/* The header and Dropdown display */
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    position: fixed;
+    width: 200px;
+    position: fixed;
+    align-items: flex-end;
+    right: 20px;
+    top: 50px;
+}
+.links {
+    display: none;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items:flex-end;
+    height: 500px;
+    border-top: #666 solid;
+    background-color: rgba(240,240,240,95%);
+    padding: 15px 30px;
+    margin-right: -15px;
+    border-bottom-left-radius: 10px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+}
+
+.links a {
+    text-decoration: none;
+    color: #666;
+    font-size: 1.3em;
+}
+
+.links a:hover {
+    color: #aaa;
+    border-bottom: #aaa solid;
+}
+
+.hamburger img {
+    height: 4em;
+    border: none;
+    margin-right: -7px;
+}
+
+.hamburger img:hover {
+    background-color: #aaa;
+    border-radius: 10px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;    
+}
+.left {
+    width: 220px;
+    height: 1px;
+}
+
+@media (max-width: 600px) {
+    .menu {
+        position: relative;
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 100%;
+        margin-left: 20px;
+        margin-top: -50px;
+        margin-bottom: 50px;
+    }
+    .links {
+        align-items: center;
+        width: 100%;
+        background-color: rgba(200,200,200,20%);
+    }
+    .hamburger {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+}
 body {
     margin: 0;
     padding: 0;
