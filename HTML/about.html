@@ -11,16 +11,21 @@
 
 </head>
 <body>
+    
     <header>
-        <nav class="navbar">
-            <a href="../html/index.html">  <!-- Link pointing to the homepage -->
-                <img src="../img/logo.png" alt="Logo" class="logo">  <!-- Your logo -->
+        <div class="navbar">
+        <div class="logo">
+            <a href="../html/index.html">
+                <img src="../img/logo.png" alt="Hurley Piano logo">
             </a>
-            <button class="hamburger" id="hamburger">
-                <img src="../img/hamburger.png" alt="Menu">
-            </button>
-            <ul class="dropdown-menu" id="nav-menu"> </ul>
-        </nav>
+        </div>
+            <div class="menu">
+                <div class="hamburger" id="hamburger">
+                        <img src="../img/hamburger.png" alt="open/collapse menu">
+                </div>
+                <div class="links" id="links"></div>
+            </div>
+        </div> 
     </header>
     <main>
         <!-- Main content goes here -->
@@ -28,7 +33,7 @@
         <div class="centered-tile-full-width-hero">
             <h1>About</h1>
             <h3>HURLEY PIANO</h3>
-            <img src="../img/about/hero.png.tiff" alt="Teaching musical instruments to Neurodiverse Kids" class="hero-photo">
+            <img src="../img/about/hero.png" alt="Teaching musical instruments to Neurodiverse Kids" class="hero-photo">
             <p>Hurley Piano develops education methodologies for easy learning to help parents teach their kids music. Expertise focuses on kids with special needs as well as neuro-typical kids, such as: ADHD, Asperger Syndrome, Austism, Down Syndrome, Dyscalculia, Dyselexia, Sensory Processing Disorder.<br><br>
 
                 Richard Hurley has developed a highly regarded Black Keys Exercises designed to introduce the world of the keyboard to the most challenging of special need students. Based in Austin Texas, a city that is a hub of special needs innovation, Hurley Piano has drawn upon the expertise of the city’s leading special needs researchers to test and challenge this methodology. Sign up for free introductory videos and blogs, follow the video based conversation around the challenges facing our special needs kiddos today.</p>
@@ -39,8 +44,6 @@
         <div class="wide-image">
             <img src="../img/about/piano.png" alt="child and adult playing piano together">
         </div>
-
-        
 
   
         </div>
@@ -75,7 +78,6 @@
         
     </div>
 
-
         <div class="centered-tile-full-width">
             <h2>Book Your First Lesson</h2>
             <form class="inquiry-form">
@@ -87,11 +89,12 @@
         
                 <label for="phone">Phone</label>
                 <input type="tel" id="phone" name="phone" placeholder="Phone">
-        
+        <!--
                 <p>Which music lessons your family is interested in?</p>
+        -->
                 <div class="checkbox-group">
                     <input type="checkbox" id="piano" name="lesson_type" value="Piano">
-                    <label for="piano">Piano Lessons</label>
+                    <label for="piano">Piano</label>
 <!--
                     <input type="checkbox" id="guitar" name="lesson_type" value="Guitar">
                     <label for="guitar">Guitar Lessons</label>
@@ -121,10 +124,45 @@
             
             </footer>
         </div>
-        
-        
-        
-    </main>
-    <script src="../html/script.js"></script>
+ 
+       <!-- Chat Widget -->
+       <div class="chat-widget" id="chat-widget">
+        <div class="chat-header" id="chat-header">
+            <img src="../img/about/hero.png" alt="Avatar" class="chat-avatar">
+            Have a question?
+            <img src="../img/about/hero.png" id="chat-close" style="display: none;">
+            <img src="../img/about/hero.png" id="chat-open">
+        </div>
+        <div class="chat-content" id="chat-content">
+            <div class="chat-instructions">Enter your question below and a representative will get right back to you.</div>
+            <form class="chat-form">
+                <input type="text" id="chat-name" name="name" placeholder="Name" required>
+                <input type="tel" id="chat-phone" name="phone" placeholder="Mobile Phone" required>
+                <textarea id="chat-message" name="message" placeholder="Message" required></textarea>
+                <div class="chat-disclaimer">By submitting you agree to receive SMS for the provided channel. Rates may be applied.</div>
+                <button type="submit" id="chat-send">Send</button>
+            </form>
+        </div>
+    </div>
+</main>
+<script src="../html/script.js"></script>
+<script>
+    // Chat Widget JavaScript
+    document.getElementById('chat-header').addEventListener('click', function() {
+        var chatContent = document.getElementById('chat-content');
+        var chatClose = document.getElementById('chat-close');
+        var chatOpen = document.getElementById('chat-open');
+
+        if (chatContent.style.display === 'block') {
+            chatContent.style.display = 'none';
+            chatClose.style.display = 'none';
+            chatOpen.style.display = 'block';
+        } else {
+            chatContent.style.display = 'block';
+            chatClose.style.display = 'block';
+            chatOpen.style.display = 'none';
+        }
+    });
+</script>
 </body>
 </html>

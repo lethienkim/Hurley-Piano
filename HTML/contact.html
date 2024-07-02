@@ -12,15 +12,19 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <a href="../html/index.html">  <!-- Link pointing to the homepage -->
-                <img src="../img/logo.png" alt="Logo" class="logo">  <!-- Your logo -->
+        <div class="navbar">
+        <div class="logo">
+            <a href="../html/index.html">
+                <img src="../img/logo.png" alt="Hurley Piano logo">
             </a>
-            <button class="hamburger" id="hamburger">
-                <img src="../img/hamburger.png" alt="Menu">
-            </button>
-            <ul class="dropdown-menu" id="nav-menu"> </ul>
-        </nav>
+        </div>
+            <div class="menu">
+                <div class="hamburger" id="hamburger">
+                        <img src="../img/hamburger.png" alt="open/collapse menu">
+                </div>
+                <div class="links" id="links"></div>
+            </div>
+        </div> 
     </header>
     <main>
         <!-- Main content goes here -->
@@ -113,10 +117,52 @@
             
             </footer>
         </div>
-        
-        
-        
-    </main>
-    <script src="../html/script.js?"></script>
+<!-- Chat Widget -->
+<div class="chat-widget" id="chat-widget">
+    <div class="chat-header" id="chat-header">
+        <img src="../img/avatar.png" alt="Avatar" class="chat-avatar">
+        Have a question?
+        <img src="../img/close.png" id="chat-close" style="display: none;">
+        <img src="../img/open.png" id="chat-open">
+    </div>
+    <div class="chat-content" id="chat-content">
+        <div class="chat-instructions">Enter your question below and a representative will get right back to you.</div>
+        <form class="chat-form">
+            <input type="text" id="chat-name" name="name" placeholder="Name" required>
+            <input type="tel" id="chat-phone" name="phone" placeholder="Mobile Phone" required>
+            <textarea id="chat-message" name="message" placeholder="Message" required></textarea>
+            <div class="chat-disclaimer">By submitting you agree to receive SMS or e-mails for the provided channel. Rates may be applied.</div>
+            <button type="submit" id="chat-send">Send</button>
+        </form>
+    </div>
+</div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script src="../html/script.js"></script>
+<script>
+// Initialize intl-tel-input
+const phoneInputField = document.querySelector("#chat-phone");
+const phoneInput = window.intlTelInput(phoneInputField, {
+    initialCountry: "us",
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+});
+
+// Chat Widget JavaScript
+document.getElementById('chat-header').addEventListener('click', function() {
+    var chatContent = document.getElementById('chat-content');
+    var chatClose = document.getElementById('chat-close');
+    var chatOpen = document.getElementById('chat-open');
+
+    if (chatContent.style.display === 'block') {
+        chatContent.style.display = 'none';
+        chatClose.style.display = 'none';
+        chatOpen.style.display = 'block';
+    } else {
+        chatContent.style.display = 'block';
+        chatClose.style.display = 'block';
+        chatOpen.style.display = 'none';
+    }
+});
+</script>
 </body>
 </html>
