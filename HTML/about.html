@@ -79,10 +79,14 @@
     </div>
 
         <div class="centered-tile-full-width">
-            <h2>Book Your First Lesson</h2>
-            <form class="inquiry-form">
-                <label for="full-name">Full Name</label>
-                <input type="text" id="full-name" name="fullname" placeholder="Full Name">
+            <h2>Book Your First Piano Lesson</h2>
+            <form action="process-bookyourfirstlesson.php" method="post" id="bookyourfirstlesson" novalidate class="inquiry-form">
+
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="firstname" placeholder="First Name">
+
+                <label for="last-name">Full Name</label>
+                <input type="text" id="last-name" name="lastname" placeholder="Last Name">
         
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="Email">
@@ -91,19 +95,19 @@
                 <input type="tel" id="phone" name="phone" placeholder="Phone">
         <!--
                 <p>Which music lessons your family is interested in?</p>
-        -->
+      
                 <div class="checkbox-group">
                     <input type="checkbox" id="piano" name="lesson_type" value="Piano">
                     <label for="piano">Piano</label>
-<!--
+
                     <input type="checkbox" id="guitar" name="lesson_type" value="Guitar">
                     <label for="guitar">Guitar Lessons</label>
         
                     <input type="checkbox" id="drums" name="lesson_type" value="Drums">
                     <label for="drums">Drum Lessons</label>
--->                    
+                   
                 </div>
-        
+        --> 
                 <button type="submit">SUBMIT</button>
             </form>
         </div>
