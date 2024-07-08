@@ -2,10 +2,11 @@
 *
 
 #unignore what we want to track
-!*.html
-!*.css
-!*.js
-!*.php
+!HTML/*.html
+!CSS/*.css
+!HTML/*.js
+!HTML/*.json
+!HTML/*.php
 
 !.gitignore
 !README.md
